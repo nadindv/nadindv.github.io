@@ -1,0 +1,126 @@
+body {
+    max-width: 320px;
+}
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(255,255,255); /* Black fallback color */
+    background-color: rgba(255,255,255, 1); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 5px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay-content ul {
+    list-style: none;
+}
+
+ /*The navigation links inside the overlay*/
+.overlay a {
+    text-decoration: none;
+    font-size: 12pt;
+    color: #272626;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+ /*Position the close button (top right corner)*/
+.overlay .closebtn {
+    /*position: absolute;*/
+    font: 1vw 'Roboto Medium';
+    margin: 0px;
+
+}
+
+
+.menu-item {
+    border-bottom: 1px solid #e8e0e8;
+    padding: 20px 0;
+    margin: 0 20px;
+}
+.menu-item > a {
+    text-align: left;
+    font: 5vw 'Roboto Regular';
+    text-decoration: none;
+    width: 100%;
+    color: #272626;
+}
+
+ul#catalog_menu {
+    margin: 8px 0 0 0;
+}
+
+ul#catalog_menu li {
+    padding: 5px 0;
+    font: 12pt 'Roboto Light'
+}
+
+ul#catalog_menu li a {
+    display: block;
+}
+
+ul#catalog_menu li a.collapsed:after {
+    content: "";
+    padding: 2vw 0;
+    content: "\f054";
+    font-size: 2.9vw;
+    font-family: FontAwesome;
+    color: #272626;
+    float: right;
+}
+ul#catalog_menu li a.expanded:after {
+    content: "";
+    padding: 2vw 0;
+    content: "\f078";
+    font-size: 2.9vw;
+    font-family: FontAwesome;
+    color: #272626;
+    /* display: block; */
+    float: right;
+}
+
+ul.catalog_submenu {
+    padding: 8px 0;
+}
+ul#catalog_menu ul li {
+    padding: 2px 20px;
+}
+ul.catalog_submenu li a{
+    font: 10.5pt 'Roboto Light';
+    color: #2a0323;
+}
+ul.catalog_submenu li a:hover {
+    font: 10.5pt 'Roboto Medium';
+    color: #f242ea;
+}
+/*ul#catalog_menu a.collapsed {  }*/
+ul#catalog_menu li a.expanded {
+    font-family: 'Roboto'; }
+ul#catalog_menu a + ul { display: none;}
+
+.MobileMenu img {
+    max-width: 100px;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media all and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font: 12pt 'Roboto Medium';
+        margin: 15px 35px;
+    }
+}

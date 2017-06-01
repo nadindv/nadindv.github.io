@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<title></title>
+</head>
+<body>
+<!-- The overlay -->
+<div id="MobileNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <div class="menu-item">
+  	 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
+	  <a href="#">Домашняя страница</a>
+  </div>
+  <!-- Overlay content -->
+  <div class="overlay-content">
+	  <div class="menu-item">
+	  <a href="#">Каталог</a>
+	<ul id="catalog_menu">
+	  <li><a href="#0">Одежда для женщин</a>
+	  	<ul class="catalog_submenu">
+	  		<li><a href="#">Брюки, джинсы, лоссины</a></li>
+	  		<li><a href="#">Шорты</a></li>
+	  		<li><a href="#">Комбинезоны</a></li>
+	  		<li><a href="#">Юбки</a></li>
+	  		<li><a href="#" class="active">Свитера, кофты, рубашки</a></li>
+	  		<li><a href="#">Футболки</a></li>
+	  		<li><a href="#">Платья</a></li>
+	  		<li><a href="#">Спортивная одежда</a></li>
+	  		<li><a href="#">Куртки, жилетки, пальто</a></li>
+	  		<li><a href="#">Костюмы</a></li>
+	  		<li><a href="#">Кардиганы, пиджаки</a></li>
+	  		<li><a href="#">Купальники, боди</a></li>
+	  		<li><a href="#">Нижнее белье</a></li>
+	  		<li><a href="#">Мама и дочка</a></li>
+		</ul>
+	  </li>
+  	  <li><a href="#">Одежда для женщин Size+</a>
+		  <ul class="catalog_submenu">
+	  		<li><a href="#">Брюки, джинсы, лоссины</a></li>
+	  		<li><a href="#">Шорты</a></li>
+	  		<li><a href="#">Комбинезоны</a></li>
+	  		<li><a href="#">Юбки</a></li>
+	  		<li><a href="#">Свитера, кофты, рубашки</a></li>
+	  		<li><a href="#">Футболки</a></li>
+	  		<li><a href="#">Платья</a></li>
+	  		<li><a href="#">Спортивная одежда</a></li>
+	  		<li><a href="#">Куртки, жилетки, пальто</a></li>
+	  		<li><a href="#">Костюмы</a></li>
+	  		<li><a href="#">Кардиганы, пиджаки</a></li>
+	  		<li><a href="#">Купальники, боди</a></li>
+	  		<li><a href="#">Нижнее белье</a></li>
+	  		<li><a href="#">Мама и дочка</a></li>
+		</ul>
+	  </li>
+      <li><a href="#">Детская одежда<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+      <li><a href="#">Аксессуары<i class="fa fa-angle-right" aria-hidden="true"></a></i></li>
+      <li><a href="#">Косметика и парфюмерия<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+      <li><a href="#">Обувь<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+      <li><a href="#">Сумки и кошельки<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+      <li><a href="#">Спальные принадлежности<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+	</ul>
+	  </div>
+		<div class="menu-item">
+		<a href="#">Новости</a>
+		</div>
+		<div class="menu-item">
+		<a href="#">Контакты</a>
+		</div>
+		<div class="menu-item">
+		<a href="#">Помощь</a>
+		</div>
+ </div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<div class="MobileMenu" onclick="openNav()"><img src="burger.png"></div>
+
+<script type="text/javascript">
+	/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("MobileNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("MobileNav").style.width = "0%";
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	   $(function ()
+		{
+		      $('ul.catalog_submenu').each(function(index, el) {
+		        var a = $(this).prev();
+		        a.addClass('collapsed').click(function() {
+		          $(el).slideToggle(200, function () {
+		          a.toggleClass('collapsed expanded');
+		        });
+		      return false;
+		    });
+		  });
+		})
+	</script>
+</body>
+</html>
