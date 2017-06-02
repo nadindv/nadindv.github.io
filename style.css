@@ -1,5 +1,5 @@
 body {
-    max-width: 320px;
+    /*max-width: 425px;*/
 }
 /* The Overlay (background) */
 .overlay {
@@ -8,7 +8,7 @@ body {
     width: 0;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    left: 0;
+    right: 0;
     top: 0;
     background-color: rgb(255,255,255); /* Black fallback color */
     background-color: rgba(255,255,255, 1); /* Black w/opacity */
@@ -31,7 +31,7 @@ body {
  /*The navigation links inside the overlay*/
 .overlay a {
     text-decoration: none;
-    font-size: 12pt;
+    font-size: 16px;
     color: #272626;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
@@ -39,10 +39,12 @@ body {
 
  /*Position the close button (top right corner)*/
 .overlay .closebtn {
-    /*position: absolute;*/
-    font: 1vw 'Roboto Medium';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 17px;
     margin: 0px;
-
+    color: #550055;
 }
 
 
@@ -53,7 +55,7 @@ body {
 }
 .menu-item > a {
     text-align: left;
-    font: 5vw 'Roboto Regular';
+    font: 16px 'Roboto Regular';
     text-decoration: none;
     width: 100%;
     color: #272626;
@@ -73,22 +75,19 @@ ul#catalog_menu li a {
 }
 
 ul#catalog_menu li a.collapsed:after {
-    content: "";
-    padding: 2vw 0;
+    padding: 5px 0;
     content: "\f054";
-    font-size: 2.9vw;
+    font-size: 11px;
     font-family: FontAwesome;
     color: #272626;
     float: right;
 }
 ul#catalog_menu li a.expanded:after {
-    content: "";
-    padding: 2vw 0;
+    padding: 5px 0;
     content: "\f078";
-    font-size: 2.9vw;
+    font-size: 11px;
     font-family: FontAwesome;
     color: #272626;
-    /* display: block; */
     float: right;
 }
 
@@ -99,11 +98,11 @@ ul#catalog_menu ul li {
     padding: 2px 20px;
 }
 ul.catalog_submenu li a{
-    font: 10.5pt 'Roboto Light';
+    font: 14px 'Roboto Light';
     color: #2a0323;
 }
 ul.catalog_submenu li a:hover {
-    font: 10.5pt 'Roboto Medium';
+    font: 14px 'Roboto Medium';
     color: #f242ea;
 }
 /*ul#catalog_menu a.collapsed {  }*/
@@ -112,15 +111,7 @@ ul#catalog_menu li a.expanded {
 ul#catalog_menu a + ul { display: none;}
 
 .MobileMenu img {
-    max-width: 100px;
+    max-width: 100px;float: right;
 }
 
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-@media all and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-        font: 12pt 'Roboto Medium';
-        margin: 15px 35px;
-    }
-}
